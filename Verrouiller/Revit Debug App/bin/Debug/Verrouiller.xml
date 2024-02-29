@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Verrouiller</name>
+    </assembly>
+    <members>
+        <member name="T:Verrouiller.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:Verrouiller.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:Verrouiller.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:Verrouiller.Properties.Resources._Error">
+            <summary>
+              Recherche une chaîne localisée semblable à Error.
+            </summary>
+        </member>
+        <member name="P:Verrouiller.Properties.Resources.favicon">
+            <summary>
+              Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+            </summary>
+        </member>
+        <member name="T:Verrouiller.Methods">
+            <summary>
+            Create methods here that need to be wrapped in a valid Revit Api context.
+            Things like transactions modifying Revit Elements, etc.
+            </summary>
+        </member>
+        <member name="T:Verrouiller.RevitEventWrapper`1">
+            <summary>
+            Class for creating Argument (Wrapped) External Events
+            </summary>
+            <typeparam name="TType">The Class type being wrapped for the External Event Handler.</typeparam>
+        </member>
+        <member name="T:Verrouiller.Ui">
+            <summary>
+            Ui
+            </summary>
+        </member>
+        <member name="M:Verrouiller.Ui.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

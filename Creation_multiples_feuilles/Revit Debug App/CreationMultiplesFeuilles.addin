@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>CreationMultiplesFeuilles Application</Name>
+    <Assembly>CreationMultiplesFeuilles\CreationMultiplesFeuilles.dll</Assembly>
+    <AddInId>604b1052-f742-4127-8576-c821d1193102</AddInId>
+    <FullClassName>CreationMultiplesFeuilles.App</FullClassName>
+    <VendorId>Jonathan ATGER</VendorId>
+    <VendorDescription>jonathan.atger@yahoo.fr</VendorDescription>
+  </AddIn>
+</RevitAddIns>

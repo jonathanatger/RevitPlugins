@@ -1,0 +1,23 @@
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\Revit Template.csprojAssemblyReference.cache
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\UI.baml
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\UI.g.cs
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\RevitTemplate_MarkupCompile.cache
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\RevitTemplate.g.resources
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\Copiedonnees.EntryCommand.resources
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\RevitTemplate.Properties.Resources.resources
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\Copiedonnees.EntryCommand.ru.resources
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\Revit Template.csproj.GenerateResource.cache
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\Revit Template.csproj.CoreCompileInputs.cache
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\bin\Debug\License.txt
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\bin\Debug\RevitTemplate.addin
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\bin\Debug\RevitTemplate.dll.config
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\bin\Debug\RevitTemplate.xml
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\bin\Debug\RevitTemplate.dll
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\bin\Debug\RevitTemplate.pdb
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\bin\Debug\ru\RevitTemplate.resources.dll
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\bin\Debug\System.Buffers.dll
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\bin\Debug\System.Buffers.xml
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\ru\RevitTemplate.resources.dll
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\Revit Template.csproj.CopyComplete
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\RevitTemplate.dll
+C:\Users\jatger\Google Drive (dropboxtpbim@gmail.com)\Visual studio\WPF\Copie données - deuxième template\Revit Debug App\obj\Debug\RevitTemplate.pdb

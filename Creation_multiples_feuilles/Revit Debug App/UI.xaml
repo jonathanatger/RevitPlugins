@@ -1,0 +1,141 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="CreationMultiplesFeuilles.Ui"      
+    xmlns:vm="clr-namespace:CreationMultiplesFeuilles.ViewModels"
+    Title="Création Feuilles" Height="720" Width="870" 
+    WindowStartupLocation="CenterScreen" 
+    Background="White"
+    FontSize="12"
+    Name="DebugUtility" Icon="Resources/revit-wire.ico"
+    MinHeight="720" MinWidth="870">     
+   
+    
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Margin="5,0"> Trier les vues par :</TextBlock>
+
+        <ComboBox Name="boxtrivues" Grid.Row="0" Grid.Column="0" SelectionChanged="lbxparamvuechange" VerticalAlignment="Top" Height="25" Margin="5,25,5,0"></ComboBox>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Margin="5,50,0,0"> Trier une deuxième fois par :</TextBlock>
+
+        <ComboBox Name="boxtrivues2" Grid.Row="0" Grid.Column="0" SelectionChanged="lbxparamvuechange2" VerticalAlignment="Top" Height="25" Margin="5,75,5,0"></ComboBox>
+
+
+
+        <ListView Name ="lbxvues"  Grid.Column="0" Grid.Row="1"  Grid.RowSpan="2" Margin="5 5 5 10" SelectionMode="Extended">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>                        
+                        <TextBlock Text="{Binding Nom}"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle> 
+                        <Style TargetType="{x:Type GroupItem}">                            
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <Expander IsExpanded="False" Margin="20,0,0,0">
+                                            <Expander.Header>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="Gray" FontSize="16" VerticalAlignment="Bottom" />
+                                                    <TextBlock Text=" - " FontSize="16" Foreground="Silver" FontStyle="Italic" VerticalAlignment="Bottom" Margin="5,0,0,0" />
+                                                    <TextBlock Text="{Binding ItemCount}" FontSize="16" Foreground="Silver" FontStyle="Italic"  VerticalAlignment="Bottom" />
+                                                    <TextBlock Text=" vue(s)" FontSize="16" Foreground="Silver" FontStyle="Italic" VerticalAlignment="Bottom" />
+                                                </StackPanel>
+                                            </Expander.Header>
+                                            <ItemsPresenter />
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </ListView.GroupStyle>
+
+        </ListView>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Margin="5,0"> Sélection du cartouche :</TextBlock>
+
+        <ListBox Name="lbxcartouche" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Height="220" Margin="5,10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Nom}" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" Margin="5,0,0,10" Height="30" VerticalAlignment="Top" > Placement titre sur feuille :</TextBlock>
+
+        <ListBox Name="lbxfenetre" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" Height="120" Margin="5,10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>                        
+                        <TextBlock Text="{Binding Nom}" />                        
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <Label Margin="0,0,0,5">Nom de la feuille :</Label>
+            <RadioButton Margin="5,0,0,10" GroupName="NomFeuille" IsChecked="True" Name="nomSimple">
+                <WrapPanel>
+                    <TextBlock>Nom de la vue</TextBlock>
+                </WrapPanel>
+            </RadioButton>
+            <RadioButton Margin="5,0,0,10" GroupName="NomFeuille" IsChecked="False" Name="prefixe">
+                <WrapPanel>
+                    <TextBlock >Préfixe + Nom de la vue :</TextBlock>
+                    <TextBox Margin="10,0" VerticalAlignment="Top" Width="150" Name="prefixeContent"></TextBox>
+                </WrapPanel>
+            </RadioButton>
+            <RadioButton Margin="5,0,0,10" GroupName="NomFeuille" IsChecked="False" Name="suffixe">
+                <WrapPanel>
+                    <TextBlock> Nom de la vue + Suffixe :</TextBlock>
+                    <TextBox Margin="10,0" VerticalAlignment="Top" Width="150" Name="suffixeContent"></TextBox>
+                </WrapPanel>
+            </RadioButton>
+
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+
+            <WrapPanel >
+                <TextBlock VerticalAlignment="Center" Margin="5,0" Width="100" > 01_DOSSIER :</TextBlock>
+                <ComboBox Name="lbxclassement1"  Height="25"  Width="280" Margin="5,5,5,5" />
+            </WrapPanel>
+
+            <WrapPanel >
+                <TextBlock VerticalAlignment="Center" Margin="5,0" Width="100" > 01_SOUS DOSSIER :</TextBlock>
+                <ComboBox Name="lbxclassement2"  Height="25"  Width="280" Margin="5,5,5,5" />
+            </WrapPanel>
+
+
+        </StackPanel>
+        
+
+        <TextBlock Name="txtbox" VerticalAlignment="Center" Grid.Row="4" Margin="6,0,10,0" TextWrapping="Wrap" />
+
+        <Button Name="btnvalidation"  Grid.Row="4" Grid.Column="1"  Background="White" Content="Créer les feuilles" Margin="5,5,5,10" Height="60" 
+                Click="Btnvalidation_Click"  VerticalAlignment="Bottom" />
+    </Grid>
+</Window>

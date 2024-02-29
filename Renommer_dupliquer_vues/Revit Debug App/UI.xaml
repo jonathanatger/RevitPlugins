@@ -1,0 +1,180 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"    
+    x:Class="RenommerDupliquerVues.Ui"          
+    Title="Renommer et dupliquer des vues" Height="750" Width="870" 
+    WindowStartupLocation="CenterScreen" 
+    Background="White"
+    FontSize="12"
+    Name="DebugUtility" Icon="Resources/revit-wire.ico"
+    MinHeight="750" MinWidth="870">
+
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Margin="5,0"> Trier les vues par :</TextBlock>
+        <ComboBox Name="cbxtrivues" Grid.Row="0" Grid.Column="0" SelectionChanged="lbxparamvuechange" VerticalAlignment="Top" Margin="5,20,5,0"></ComboBox>
+        <TextBlock Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Margin="5,50,5,0"> Trier une deuxième fois par :</TextBlock>
+        <ComboBox Name="cbxtrivues2" Grid.Row="0" Grid.Column="0" SelectionChanged="lbxparamvuechange2" VerticalAlignment="Top" Margin="5,75,5,0"></ComboBox>
+
+        <ListView Name ="lbxvues"  Grid.Column="0" Grid.Row="1"  Grid.RowSpan="2" Margin="5 5 5 10" SelectionMode="Extended" SelectionChanged="lvw_nomfeuille_majtexte">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Nom}"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate>
+                                        <Expander IsExpanded="False" Margin="20,0,0,0">
+                                            <Expander.Header>
+                                                <StackPanel Orientation="Horizontal" >
+                                                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Foreground="Gray" FontSize="16" VerticalAlignment="Bottom" />
+                                                    <TextBlock Text=" - " FontSize="16" Foreground="Silver" FontStyle="Italic" VerticalAlignment="Bottom" Margin="5,0,0,0" />
+                                                    <TextBlock Text="{Binding ItemCount}" FontSize="16" Foreground="Silver" FontStyle="Italic"  VerticalAlignment="Bottom" />
+                                                    <TextBlock Text=" vue(s)" FontSize="16" Foreground="Silver" FontStyle="Italic" VerticalAlignment="Bottom" />
+                                                </StackPanel>
+                                            </Expander.Header>
+                                            <ItemsPresenter />
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </ListView.GroupStyle>
+
+        </ListView>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Margin="0,0,0,5" FontStyle="Italic" FontSize="13">Action à mener sur les vues :</Label>
+            <RadioButton Margin="5,0,0,10" GroupName="Action" IsChecked="True" Name="renommer" >
+                <WrapPanel>
+                    <TextBlock>Renommer les vues</TextBlock>
+                </WrapPanel>
+            </RadioButton>
+            <RadioButton Margin="5,0,0,10" GroupName="Action" IsChecked="False" Name="dupliquer">
+                <WrapPanel>
+                    <TextBlock >Dupliquer et renommer les vues</TextBlock>
+                </WrapPanel>
+            </RadioButton>
+            <RadioButton Margin="5,0,0,10" GroupName="Action" IsChecked="False" Name="dupliquerdetails">
+                <WrapPanel>
+                    <TextBlock >Dupliquer et renommer les vues en conservant les détails et annotations</TextBlock>
+                </WrapPanel>
+            </RadioButton>
+            <RadioButton Margin="5,0,0,10" GroupName="Action" IsChecked="False" Name="dupliquervuesdependantes">
+                <WrapPanel>
+                    <TextBlock> Dupliquer et renommer les vues en tant que vues dépendantes</TextBlock>
+                </WrapPanel>
+            </RadioButton>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label Margin="0,0,0,5" FontStyle="Italic" FontSize="13">Critères pour renommer les vues :</Label>
+            <RadioButton Margin="5,0,0,10" GroupName="NomFeuille" IsChecked="True" Name="insertion" Checked="rbs_nomfeuille_checked">
+                <WrapPanel Orientation="Vertical" Width="400">
+                    <WrapPanel>
+                        <TextBlock FontSize="13">Insérer du texte :</TextBlock>
+                    </WrapPanel>
+                    <DockPanel Margin="0,5,0,10">
+                        <TextBlock VerticalAlignment="Center">Texte à insérer :</TextBlock>
+                        <TextBox Margin="5,0" Width="200" HorizontalAlignment="Right" Name="texteinsere" TextChanged="tbx_nomfeuille_majtexte" Text="Copie_ "></TextBox>
+                    </DockPanel>
+                    <DockPanel Margin="0,0,0,0" Width="400" >
+                        <TextBlock>Position du nouveau texte :</TextBlock>
+                        <TextBox Margin="5,0" Width="200" HorizontalAlignment="Right" Name="positiontexteinsere" TextChanged="tbx_nomfeuille_majtexte">0</TextBox>
+                    </DockPanel>
+                    <TextBlock FontSize="10" FontStyle="Italic">(nombre de caractères à partir du début)</TextBlock>
+                </WrapPanel>
+            </RadioButton>
+            <RadioButton Margin="5,10,0,10" GroupName="NomFeuille"  Name="remplacement" Checked="rbs_nomfeuille_checked">
+                <WrapPanel Orientation="Vertical" Width="400">
+                    <WrapPanel>
+                        <TextBlock FontSize="13">Remplacer du texte :</TextBlock>
+                    </WrapPanel>
+                    <DockPanel Margin="0,5,0,10">
+                        <TextBlock VerticalAlignment="Center">Texte à rechercher :</TextBlock>
+                        <TextBox Margin="5,0" Width="200" HorizontalAlignment="Right" Name="texterecherche" TextChanged="tbx_nomfeuille_majtexte"></TextBox>
+                    </DockPanel>
+                    <DockPanel Margin="0,0,0,0" Width="400" >
+                        <TextBlock>Nouveau texte pour  remplacement :</TextBlock>
+                        <TextBox Margin="5,0" Width="200" HorizontalAlignment="Right" Name="textepourremplacer" TextChanged="tbx_nomfeuille_majtexte"></TextBox>
+                    </DockPanel>
+                </WrapPanel>
+            </RadioButton>
+
+            <RadioButton Margin="5,10,0,10" GroupName="NomFeuille"  Name="suppression" Checked="rbs_nomfeuille_checked">
+                <WrapPanel Orientation="Vertical" Width="400">
+                    <WrapPanel>
+                        <TextBlock FontSize="13">Supprimer du texte :</TextBlock>
+                    </WrapPanel>
+                    <DockPanel Margin="0,5,0,10">
+                        <TextBlock VerticalAlignment="Center">Nombre de caractères à enlever :</TextBlock>
+                        <TextBox Margin="5,0" Width="200" HorizontalAlignment="Right" Name="nombrecaracteressupprimes" TextChanged="tbx_nomfeuille_majtexte">0</TextBox>
+                    </DockPanel>
+                    <DockPanel Margin="0,0,0,0" Width="400" >
+                        <TextBlock>Position du texte à supprimer :</TextBlock>
+                        <TextBox Margin="5,0" Width="200" HorizontalAlignment="Right" Name="positiontextesupprime" TextChanged="tbx_nomfeuille_majtexte">0</TextBox>
+                    </DockPanel>
+                    <TextBlock FontSize="10" FontStyle="Italic">(nombre de caractères à partir du début)</TextBlock>
+                </WrapPanel>
+            </RadioButton>
+
+            <TextBlock FontSize="13" FontStyle="Italic" Margin="5,15,0,0"> Appliquer un gabarit de vue (optionnel)</TextBlock>
+            <ComboBox Margin="5,5" Name="cbxgabarit">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <TextBlock Text="{Binding Nom}"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        <WrapPanel Orientation="Vertical" Grid.Row="3" Grid.Column="0">
+            <TextBlock FontSize="14" FontStyle="Italic" Margin="5,0">Visualisation des modifications  :</TextBlock>
+            <Grid Width="420" Margin="5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <WrapPanel Grid.Column="0" Orientation="Vertical">
+                    <TextBlock FontStyle="Italic">Ancien nom de la vue :</TextBlock>
+                    <TextBlock Name="anciennom" >-</TextBlock>
+                </WrapPanel>
+                <WrapPanel Grid.Column="1" Orientation="Vertical">
+                    <TextBlock FontStyle="Italic" >Nouveau nom :</TextBlock>
+                    <TextBlock Name ="nouveaunom">-</TextBlock>
+                </WrapPanel>
+            </Grid>
+        </WrapPanel>
+
+
+        <TextBlock Name="txtbox" VerticalAlignment="Top" Grid.Row="3" Margin="0,63,16,0" TextWrapping="Wrap" />
+
+        <Button Name="btnvalidation"  Grid.Row="3" Grid.Column="1"  Background="White" Content="Renommer/dupliquer les vues" Margin="5,5,5,10" Height="45"
+                Click="Btnvalidation_Click"  VerticalAlignment="Top" />
+    </Grid>
+</Window>

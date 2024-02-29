@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>RenommerDupliquerVues Application</Name>
+    <Assembly>RenommerDupliquerVues\RenommerDupliquerVues.dll</Assembly>
+    <AddInId>bb814651-c77c-4d48-85ad-9f7ad0678847</AddInId>
+    <FullClassName>RenommerDupliquerVues.App</FullClassName>
+    <VendorId>Jonathan ATGER</VendorId>
+    <VendorDescription>jonathan.atger@yahoo.fr</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>SynchroniserPresentations</Name>
+    <Assembly>SynchroniserPresentations\SynchroniserPresentations.dll</Assembly>
+    <AddInId>E773675A-82CD-4E80-9484-F6176A82D0F8</AddInId>
+    <FullClassName>SynchroniserPresentations.App</FullClassName>
+    <VendorId>Jonathan ATGER</VendorId>
+    <VendorDescription>jonathan.atger@yahoo.fr</VendorDescription>
+  </AddIn>
+</RevitAddIns>

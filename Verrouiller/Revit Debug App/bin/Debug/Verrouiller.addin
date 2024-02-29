@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Verrouiller Application</Name>
+    <Assembly>Verrouiller.dll</Assembly>
+    <AddInId>B359C53B-96E7-49D2-91DC-62AB047DE96F</AddInId>
+    <FullClassName>Verrouiller.App</FullClassName>
+    <VendorId>Jonathan ATGER</VendorId>
+    <VendorDescription>jonathan.atger@yahoo.fr</VendorDescription>
+  </AddIn>
+</RevitAddIns>
