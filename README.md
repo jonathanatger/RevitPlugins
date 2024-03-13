@@ -11,6 +11,8 @@ For more info : [Revit overview](https://www.autodesk.fr/products/revit/overview
 
 ## Technologies used
 
+[![My Skills](https://skillicons.dev/icons?i=cs)](https://skillicons.dev)
+
 The language used for the plugins is C# - it is the most well documented and supported available amongst the compatible languages. The plugins almost exclusively use system libraries and the Revit API - one exception is the WPF (Windows Presentation Format) used for the UI. It is flexible and has similarities with web development. All plugins are modeless : they run in parallel to Revit instead of halting its execution while on. They therefore implement `IExternalEventHandler` using the `RevitEventWrapper` class when they need to interact with Revit in a transformative way. All `Transaction` are wrapped into such a handler. The UI are dynamically populated with the Revit model data. A new Ribbon Panel with all the graphical elements is created using `RibbonPanel`. Every plugin is compiled to a separate namespace and therefore .dll, for flexibility in the choice of the plugins.
 
 ## List of Plugins
